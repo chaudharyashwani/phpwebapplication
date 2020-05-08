@@ -2,26 +2,33 @@
 <html lang="">
 <head>
 <title> ... Ashwani Chaudhary acf7c6 ... </title>
-</head>
-<body>
-<em>Emphasized text</em>
-<div style="color:#0000FF">
-<h1><strong> <span style="color:blue">blue</span>SAMSUNG </strong></h1>
-</div>
-<img src="th.jpg" alt="mobile">
-<strong>&lt; class="feature" &gt;FEATURES</strong>
- <a href="https://www.google.com">Visit google.com!</a>
+<h1> Welcome to my guessing game</h1>
 
- <a href="https://www.gmail.com">Visit gmail.com!</a>
- <a href="https://www.yahoo.com">Visit yahoo.com!</a>
-<ul>
-
-
-<li><h3> Metallic Body</h3></li>
-<li><h3>Black Colour</h3></li>
-<li><h3> Touch Screen</h3></li>
-
-</ul>
-<p></p>
+<?php
+$correctnumber=26; //change this number //
+if($_GET['guess'])
+{
+  if (is_numeric($_GET['guess'])===FALSE)
+ {
+echo "Your guess is not a number";
+}
+else if ($_GET['guess']<$correctnumber)
+ {
+echo "Your guess is too low";
+}
+else if ($_GET['guess']>$correctnumber)
+ {
+echo "Your guess is too high";
+}
+else if ($_GET['guess']==$correctnumber)
+ {
+echo "Congratulations - You are right";
+}
+}
+else
+{
+echo "Missing guess parameter <br> Your guess is too short";
+}
+?>
 </body>
 </html>
